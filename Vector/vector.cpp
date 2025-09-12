@@ -11,5 +11,5 @@ int main(){
         cout << i << " ";
     }
     cout << vec.size() << endl;
-    return 0;3
+    return 0;
 }
