@@ -6,11 +6,13 @@ int main(){
     cin>>n;
     // for (int i = 1; i <= n; i++)
     // {
+    //     int k=1;
     //     for (int j = 1; j <= n; j++)
     //     {
     //         if ((i+j)>n)
     //         {
-    //             cout<<"*";                
+    //             cout<<k;    
+    //             k++;            
     //         }
     //         else cout<<" ";
     //     }
@@ -25,7 +27,7 @@ int main(){
         }
         for (int j = 1; j <= i; j++)
         {
-            cout<<"*";
+            cout<<j;
         }        
         cout<<endl;
     }
