@@ -2,11 +2,12 @@
 using namespace std;
 int gcd(int x,int y){
     int gcd=1;
-    for (int i = 1; i <= min(x,y)/2; i++)
+    for (int i = min(x,y)/2; i >= 2; i--)
     {
         if (x%i==0&&y%i==0)
         {
             gcd=i;
+            break;
         }
         
     }
