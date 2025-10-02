@@ -29,7 +29,7 @@ int main(){
         cin>>temp;
         v.push_back(temp);
     }
-    int k;
+    int k;  // for number of rotations.
     cout<<"Enter how much you want to rotate the vector : ";
     cin>>k;
     k=k%n;
