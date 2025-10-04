@@ -9,8 +9,8 @@ void display(vector<int>& v){
     cout<<endl;
 }
 void merge(vector<int>& v1,vector<int>& v2,vector<int>& v3){
-    int i = 0,j=0,k=0;
-    while (k < v1.size()+v2.size())
+    int i = 0,j=0,k=0,m=v1.size(),n=v2.size();
+    while (i < m && j < n )
     {
         if (v1[i]<=v2[j])
         {
@@ -21,8 +21,26 @@ void merge(vector<int>& v1,vector<int>& v2,vector<int>& v3){
             v3.push_back(v2[j]);
             j++;        
         }
-        k++;
     }    
+    if (i==m)
+    {
+        while (j<n)
+        {
+            v3.push_back(v2[j]);
+            j++;
+            k++;   
+        }
+    }
+    else if (j==n)
+    {
+        while (i<m)
+        {
+            v3.push_back(v1[i]);
+            i++;
+            k++;   
+        }
+    }
+    
 }
 int main(){
     vector<int> v1;
