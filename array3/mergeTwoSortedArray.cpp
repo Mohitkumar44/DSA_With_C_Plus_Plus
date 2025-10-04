@@ -16,13 +16,12 @@ void merge(vector<int>& v1,vector<int>& v2,vector<int>& v3){
         {
             v3.push_back(v1[i]);
             i++;
-            k++;
         }
         else{
             v3.push_back(v2[j]);
             j++;        
-            k++;
         }
+        k++;
     }    
 }
 int main(){
