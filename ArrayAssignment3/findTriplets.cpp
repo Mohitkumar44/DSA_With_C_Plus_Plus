@@ -1,12 +1,7 @@
 #include<iostream>
 using namespace std;
-int main(){
-    int arr[] = {1, 3, 5, 7, 9};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    int x;
+int triplets(int arr[],int n,int x){
     int count = 0;
-    cout<<"Enter the value of X : ";
-    cin>>x;
     for (int i = 0; i < n; i++)
     {
         for (int j = i+1; j < n; j++)
@@ -21,6 +16,22 @@ int main(){
         }
         
     }
-    cout<<count;
+    return count;
+}
+int main(){
+    int n;
+    cout<<"Enter no. of elements : ";
+    cin>>n;
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin>>arr[i];
+    }
+    
+    int x;
+    cout<<"Enter the value of X : ";
+    cin>>x;
+    
+    cout<<triplets(arr,n,x);
     return 0;
 }
