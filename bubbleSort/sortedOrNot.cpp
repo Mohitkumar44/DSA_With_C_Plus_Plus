@@ -4,22 +4,12 @@ using namespace std;
 int main(){
     int arr[] = {5,4,6,3,2,1};
     bool sort = true;
-    for(int i = 1; i < 6; i++){
-        for (int j = 0; j < 6-i; j++)
+    for(int i = 0; i < 6-1; i++){
+        if (arr[i]>arr[i+1])
         {
-            if (arr[j]>arr[j+1])
-            {
-                sort = false;
-                break;
-            }
-            
-        }
-        if (sort)
-        {
+            sort = false;
             break;
         }
-        
-        
     }
     if (sort)
     {
