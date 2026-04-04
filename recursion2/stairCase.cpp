@@ -6,6 +6,6 @@ int stair(int n){
     return stair(n-1)+stair(n-2);
 }
 int main(){
-    cout<<stair(4);
+    cout<<stair(5);
     return 0;
 }
