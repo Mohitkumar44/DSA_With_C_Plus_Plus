@@ -3,9 +3,7 @@
 using namespace std;
 void stockSpan(int stock[], int stIdx[], int n){
     stack<int> st;
-    stIdx[0] = 1;
-    st.push(0);
-    for (int i = 1; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         while(st.size() > 0 && stock[i] >= stock[st.top()]){
             st.pop();
