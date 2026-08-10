@@ -1,75 +1,74 @@
 #include<iostream>
+#include<vector>
 using namespace std;
-class minHeap{
+class maxHeap{
 public:
-    int arr[100];
-    int size;
-    minHeap() {
-        size = 1;
-    }
+    vector<int> v;
     int top(){
-        return arr[1];
+        return v[1];
+    }
+    maxHeap(){
+        v.push_back(0);
     }
     void push(int val){
-        int idx = size;
-        arr[idx] = val;
+        int idx = v.size();
+        v.push_back(val);
         while(idx!=1) {
-            if(arr[idx/2]>arr[idx]) {
-                swap(arr[idx/2], arr[idx]);
+            if(v[idx/2]<v[idx]) {
+                swap(v[idx/2], v[idx]);
                 idx = idx/2;
             } 
             else break;
         }
-        size++;
     }
     void pop(){
-        arr[1] = arr[size];
-        size--;
+        v[1] = v[v.size()-1];
+        v.pop_back();
         int i = 1;
-        while(i*2 < size) {
-            if((i*2)+1 <= size) {
-                if(arr[i] > arr[(2*i)] && arr[i] > arr[(2*i)+1]) {
-                    if(arr[i*2] < arr[(i*2)+1]) {
-                        swap(arr[i], arr[i*2]);
+        while(i*2 <= v.size()-1) {
+            if((i*2)+1 <= v.size()) {
+                if(v[i] < v[(2*i)] && v[i] < v[(2*i)+1]) {
+                    if(v[i*2] > v[(i*2)+1]) {
+                        swap(v[i], v[i*2]);
                         i = i*2;
                     }
                     else {
-                        swap(arr[i], arr[(i*2)+1]);
+                        swap(v[i], v[(i*2)+1]);
                         i = i*2+1;
                     }
                 }
-                else if(arr[i] > arr[(2*i)]) {
-                    swap(arr[i], arr[i*2]);
+                else if(v[i] < v[(2*i)]) {
+                    swap(v[i], v[i*2]);
                     i = i*2;                    
                 }
-                else if(arr[i] > arr[(2*i)+1]) {
-                    swap(arr[i], arr[(i*2)+1]);
+                else if(v[i] < v[(2*i)+1]) {
+                    swap(v[i], v[(i*2)+1]);
                     i = i*2+1;
                 }
                 else {
                     break;
                 }
             }
-            else if(arr[i] > arr[(2*i)]){
-                swap(arr[i], arr[(i*2)]);
+            else if(v[i] < v[(2*i)]){
+                swap(v[i], v[(i*2)]);
                 i = (i*2);
             }
             else break;
         }
     }
     int size_of() {
-        return size-1;
+        return v.size();
     }
     void display(){
-        for (int i = 1; i < size; i++)
+        for (int i = 1; i < v.size(); i++)
         {
-            cout<<arr[i]<<" ";
+            cout<<v[i]<<" ";
         }        
         cout<<endl;
     }
 };
 int main(){
-    minHeap heap;
+    maxHeap heap;
     heap.push(10);
     heap.push(50);
     heap.push(40);

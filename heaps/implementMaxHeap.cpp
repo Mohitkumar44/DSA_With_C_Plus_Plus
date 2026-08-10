@@ -1,10 +1,10 @@
 #include<iostream>
 using namespace std;
-class minHeap{
+class maxHeap{
 public:
     int arr[100];
     int size;
-    minHeap() {
+    maxHeap() {
         size = 1;
     }
     int top(){
@@ -14,7 +14,7 @@ public:
         int idx = size;
         arr[idx] = val;
         while(idx!=1) {
-            if(arr[idx/2]>arr[idx]) {
+            if(arr[idx/2] < arr[idx]) {
                 swap(arr[idx/2], arr[idx]);
                 idx = idx/2;
             } 
@@ -23,13 +23,13 @@ public:
         size++;
     }
     void pop(){
-        arr[1] = arr[size];
+        arr[1] = arr[size-1];
         size--;
         int i = 1;
         while(i*2 < size) {
             if((i*2)+1 <= size) {
-                if(arr[i] > arr[(2*i)] && arr[i] > arr[(2*i)+1]) {
-                    if(arr[i*2] < arr[(i*2)+1]) {
+                if(arr[i] < arr[(2*i)] && arr[i] < arr[(2*i)+1]) {
+                    if(arr[i*2] > arr[(i*2)+1]) {
                         swap(arr[i], arr[i*2]);
                         i = i*2;
                     }
@@ -38,11 +38,11 @@ public:
                         i = i*2+1;
                     }
                 }
-                else if(arr[i] > arr[(2*i)]) {
+                else if(arr[i] < arr[(2*i)]) {
                     swap(arr[i], arr[i*2]);
                     i = i*2;                    
                 }
-                else if(arr[i] > arr[(2*i)+1]) {
+                else if(arr[i] < arr[(2*i)+1]) {
                     swap(arr[i], arr[(i*2)+1]);
                     i = i*2+1;
                 }
@@ -50,8 +50,8 @@ public:
                     break;
                 }
             }
-            else if(arr[i] > arr[(2*i)]){
-                swap(arr[i], arr[(i*2)]);
+            else if(arr[i] < arr[(2*i)]){
+                swap(arr[i], arr[(2*i)]);
                 i = (i*2);
             }
             else break;
@@ -69,7 +69,7 @@ public:
     }
 };
 int main(){
-    minHeap heap;
+    maxHeap heap;
     heap.push(10);
     heap.push(50);
     heap.push(40);
