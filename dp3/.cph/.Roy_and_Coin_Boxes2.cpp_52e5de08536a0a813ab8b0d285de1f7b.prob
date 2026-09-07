@@ -1,0 +1,1 @@
+{"name":"Local: Roy_and_Coin_Boxes2","url":"e:\\Coding\\DSA With C++\\dp3\\Roy_and_Coin_Boxes2.cpp","tests":[{"id":1788796847408,"input":"7\n4\n1 3\n2 5\n1 2\n5 6\n4\n1\n7\n4\n2","output":"6\n0\n0\n4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Coding\\DSA With C++\\dp3\\Roy_and_Coin_Boxes2.cpp","group":"local","local":true}
