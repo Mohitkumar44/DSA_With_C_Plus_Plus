@@ -1,0 +1,1 @@
+{"name":"Local: matrix_Multiplication","url":"e:\\Coding\\DSA With C++\\dp3\\matrix_Multiplication.cpp","tests":[{"id":1788888249184,"input":"5 40 20 30 10 30","output":"26000"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Coding\\DSA With C++\\dp3\\matrix_Multiplication.cpp","group":"local","local":true}
