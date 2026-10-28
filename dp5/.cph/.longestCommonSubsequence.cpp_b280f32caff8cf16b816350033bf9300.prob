@@ -1,0 +1,1 @@
+{"name":"Local: longestCommonSubsequence","url":"e:\\Coding\\DSA With C++\\dp5\\longestCommonSubsequence.cpp","tests":[{"id":1793198264385,"input":"abac\ncab","output":"ab"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Coding\\DSA With C++\\dp5\\longestCommonSubsequence.cpp","group":"local","local":true}
